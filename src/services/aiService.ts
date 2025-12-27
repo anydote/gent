@@ -2,10 +2,8 @@ import { generateText } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { SYSTEM_PROMPT } from "../constants/prompt";
 
-const API_KEY = process.env.AI_API_KEY || "";
-
 const openai = createOpenAI({
-  apiKey: API_KEY,
+  apiKey: process.env.EXPO_PUBLIC_AI_API_KEY,
 });
 
 export const generateMealPlan = async (): Promise<string> => {
